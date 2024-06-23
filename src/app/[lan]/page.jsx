@@ -12,6 +12,11 @@ import Topics from "@/components/topic-news/topic-news";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 import { getData } from "@/hooks/server-api";
 
+export const metadata = {
+  title: "Home | Acero News",
+  description: "Acero news",
+};
+
 export default async function Home({ params }) {
   const articles = await getData(`category/${params?.lan}/bangladesh/articles`);
   const recentArticles = await getData(`recent_news/${params?.lan}`);

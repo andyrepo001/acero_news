@@ -13,6 +13,15 @@ import Icon from "@/components/icon/icon";
 import Category from "@/components/category/category";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 
+export async function generateMetadata({ params }) {
+  let data = await getData(`article/${params?.lan}/${params.slug}`);
+
+  return {
+    title: data?.article_name,
+    description: data?.article_content,
+  };
+}
+
 export default async function Article({ params }) {
   let data = await getData(`article/${params?.lan}/${params.slug}`);
   const articles = await getData(

@@ -7,12 +7,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localanews.com",
-      },
-      {
         protocol: "https",
-        hostname: "images.pexels.com",
+        hostname: "newsaccess.anvildynamics.xyz",
       },
     ],
   },

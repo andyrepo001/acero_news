@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/navbar";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }) {
   const params = useParams();
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

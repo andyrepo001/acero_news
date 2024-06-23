@@ -8,7 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "newsaccess.anvildynamics.xyz",
+        hostname: "news.anvildynamics.xyz",
       },
     ],
   },

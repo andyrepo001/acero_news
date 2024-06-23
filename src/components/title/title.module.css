@@ -1,0 +1,34 @@
+.title {
+  width: fit-content;
+  text-transform: capitalize;
+  font-size: var(--font-md);
+  font-weight: var(--font-bold);
+  position: relative;
+}
+
+.secondary {
+  font-size: var(--font-md);
+  text-transform: capitalize;
+  margin-bottom: var(--margin);
+  color: var(--theme-color);
+  position: relative;
+  width: fit-content;
+}
+
+.secondary::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: var(--theme-color);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: -120%;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--font-lg);
+  }
+}

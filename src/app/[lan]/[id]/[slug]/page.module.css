@@ -1,0 +1,132 @@
+.page {
+  position: relative;
+}
+
+.image_wrapper {
+  height: 350px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  padding-bottom: var(--padding);
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.quote {
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--theme-color);
+  text-align: center;
+  margin: calc(var(--margin) * 4) 0;
+}
+
+.category_title {
+  margin: calc(var(--margin) * 4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  padding: var(--padding) 0;
+  border-top: 1px solid var(--color-mute);
+  border-bottom: 1px solid var(--color-mute);
+}
+
+.author_image_wrapper {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.author_image {
+  object-fit: cover;
+}
+
+.author_name {
+  text-transform: capitalize;
+}
+
+.date {
+  text-transform: capitalize;
+  text-align: center;
+  padding: var(--padding) 0;
+  border-top: 1px solid var(--color-mute);
+  border-bottom: 1px solid var(--color-mute);
+}
+
+.article_content {
+  line-height: 1.5;
+  padding-bottom: var(--padding);
+}
+
+.article_image {
+  margin: 1rem 0;
+}
+
+.text_content {
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page {
+    display: grid;
+    grid-template-columns: 3fr 1.2fr;
+    gap: calc(var(--gap) * 2);
+  }
+
+  .author_date {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--gap) * 2);
+  }
+
+  .author,
+  .date {
+    border: none;
+  }
+
+  .author_date_social {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-mute);
+    border-bottom: 1px solid var(--color-mute);
+  }
+
+  .main {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image_wrapper {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page {
+    gap: calc(var(--gap) * 6);
+  }
+
+  .image_wrapper {
+    height: 600px;
+  }
+}

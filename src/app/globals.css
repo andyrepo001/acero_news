@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap'); */
+
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerifBengali.ttf") format("truetype");
+}
+
+:root {
+  /* --background: #002E44; */
+  /* --background: #F2F6F7; */
+  --background: #131f49;
+  --white: #ffffff;
+  --color-mute: #d8ddec;
+  --theme-color: #e52e2e;
+  --font-color: #000000;
+  --max-width: 1400px;
+  --gap: 0.5rem;
+  --margin: 0.5rem;
+  --padding: 0.5rem;
+  --radius: 0.3rem;
+  --font-lg: 2rem;
+  --font-md: 1.3rem;
+  --font: 1rem;
+  --font-sm: 0.675rem;
+  --font-bold: 600;
+  --transition: 0.3s ease;
+  --border-radius: 15px;
+}
+
+html,
+body {
+  font-family: "Noto Serif";
+  /* font-family: "Noto Serif Bengali", serif; */
+  font-optical-sizing: auto;
+  font-size: var(--font);
+  background-color: var(--background);
+  color: var(--font-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--theme-color);
+}

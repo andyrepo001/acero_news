@@ -1,0 +1,6 @@
+.section_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: 0 var(--padding);
+}

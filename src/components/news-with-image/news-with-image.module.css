@@ -1,0 +1,32 @@
+.news_with_image {
+  display: flex;
+  flex-direction: column-reverse;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.animate {
+  opacity: 1;
+}
+
+.image_wrapper {
+  position: relative;
+  height: 350px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .image_wrapper {
+    height: 100px;
+  }
+
+  .news_with_image {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    align-items: center;
+    gap: var(--gap);
+  }
+}

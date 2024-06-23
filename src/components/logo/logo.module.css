@@ -1,0 +1,9 @@
+.logo {
+  display: block;
+}
+
+.logo_image {
+  width: 170px;
+  height: fit-content;
+  object-fit: contain;
+}

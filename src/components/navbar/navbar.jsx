@@ -103,11 +103,11 @@ export default function Navbar() {
                     <Icon icon={Youtube} iconSize={14} />
                   </Link>
                 </div>
-                <Link href={`${params?.lan === "bn" ? "/en" : "/bn"}`}>
+                {/* <Link href={`${params?.lan === "bn" ? "/en" : "/bn"}`}>
                   <Button
                     label={`${params?.lan === "bn" ? "english" : "bangla"}`}
                   />
-                </Link>
+                </Link> */}
               </div>
             </div>
 

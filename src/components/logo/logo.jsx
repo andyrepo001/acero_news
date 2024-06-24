@@ -9,10 +9,11 @@ export default function Logo() {
   const params = useParams();
 
   return (
-    <header>
+    <header className={styles.header}>
       <Link href={`/${params?.lan}`} className={styles.logo}>
         <Image src={logo} alt="" className={styles.logo_image} />
       </Link>
+      <span className={styles.beta}>beta</span>
     </header>
   );
 }

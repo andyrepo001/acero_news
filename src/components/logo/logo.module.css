@@ -7,3 +7,18 @@
   height: fit-content;
   object-fit: contain;
 }
+
+.header {
+  position: relative;
+}
+
+.beta {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: calc(var(--padding) * 0.5) var(--padding);
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.675rem;
+  border-radius: var(--radius);
+}

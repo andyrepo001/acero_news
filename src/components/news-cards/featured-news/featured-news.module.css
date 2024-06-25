@@ -37,6 +37,10 @@
   margin: var(--margin) 0;
 }
 
+.date_time {
+  font-size: 0.875rem;
+}
+
 .article {
   display: -webkit-box;
   -webkit-box-orient: vertical;

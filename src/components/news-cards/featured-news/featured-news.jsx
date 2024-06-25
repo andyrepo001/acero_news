@@ -15,6 +15,12 @@ export default function FeaturedNews({ withArticle, article }) {
 
   const decoded = decode(article?.article_summary);
 
+  const date = new Date(article?.article_published_date).toDateString();
+
+  const time = new Date(article?.article_published_date)
+    .toLocaleString()
+    .split(",")[1];
+
   return (
     <article
       ref={item}
@@ -49,7 +55,7 @@ export default function FeaturedNews({ withArticle, article }) {
             </h3>
             <div className={styles.cat_date}>
               <Category category={article?.category_name} />
-              <span>{article?.article_published_date}</span>
+              <span className={styles.date_time}>{date + "," + time}</span>
             </div>
           </header>
           {withArticle && (

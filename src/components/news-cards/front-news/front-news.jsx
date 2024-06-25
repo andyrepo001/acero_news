@@ -15,6 +15,12 @@ export default function FrontNews({ article }) {
   const { intersecting } = useIntersection(item);
   const params = useParams();
 
+  const date = new Date(article?.article_published_date).toDateString();
+
+  const time = new Date(article?.article_published_date)
+    .toLocaleString()
+    .split(",")[1];
+
   return (
     <article
       ref={item}
@@ -51,8 +57,7 @@ export default function FrontNews({ article }) {
               <div className={styles.author_cat}>
                 <Category category={article?.category_name} />
                 <span>
-                  <Link href="">বাণিজ্য ডেস্ক</Link> -{" "}
-                  {article?.article_published_date}
+                  <Link href="">বাণিজ্য ডেস্ক</Link> - {date + "," + time}
                 </span>
               </div>
             </header>

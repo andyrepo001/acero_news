@@ -31,6 +31,12 @@ export default async function Article({ params }) {
 
   const decoded = decode(data?.article_content);
 
+  const date = new Date(data?.article_published_date).toDateString();
+
+  const time = new Date(data?.article_published_date)
+    .toLocaleString()
+    .split(",")[1];
+
   return (
     <>
       <Container>
@@ -75,9 +81,7 @@ export default async function Article({ params }) {
                         </Link>
                       </span>
                     </div>
-                    <p className={styles.date}>
-                      {data?.article_published_date}
-                    </p>
+                    <p className={styles.date}>{date + "," + time}</p>
                   </div>
                   {/* Social links */}
                   <div className={styles.socials}></div>

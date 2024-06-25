@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { Providers } from "./providers";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function RootLayout({ children }) {
   const params = useParams();
@@ -23,11 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <SpeedInsights />
-        <Analytics />
+        <Providers bg="colors.background">
+          <Navbar />
+          {children}
+          <Footer />
+          <SpeedInsights />
+          <Analytics />
+          <GoogleAnalytics gaId="G-H0014SNNEM" />
+        </Providers>
       </body>
     </html>
   );

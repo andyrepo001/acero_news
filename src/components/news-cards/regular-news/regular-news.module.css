@@ -17,6 +17,7 @@
 }
 
 .headline {
+  font-weight: var(--font-bold);
   font-size: var(--font);
   margin-bottom: var(--margin);
 }

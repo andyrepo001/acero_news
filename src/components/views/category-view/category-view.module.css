@@ -1,6 +1,6 @@
 .section_wrapper {
   padding: calc(var(--padding) * 2) 0;
-  margin: 0 1rem;
+  margin: 0 var(--margin);
 }
 
 .recent_section {
@@ -16,7 +16,7 @@
 }
 
 .recent_title {
-  margin: calc(var(--margin) * 2) 0;
+  margin: var(--margin) 0;
 }
 
 @media (min-width: 768px) {

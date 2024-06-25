@@ -24,6 +24,7 @@
 
 .headline {
   margin-top: var(--margin);
+  font-weight: var(--font-bold);
 }
 
 .author_cat {

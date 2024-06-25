@@ -11,6 +11,8 @@ import HotNews from "@/components/hot-news/hot-news";
 import Topics from "@/components/topic-news/topic-news";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 import { getData } from "@/hooks/server-api";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 export const metadata = {
   title: "Home | Acero News",
@@ -26,8 +28,8 @@ export default async function Home({ params }) {
 
   return (
     <Container>
-      <div className={styles.content}>
-        <div>
+      <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap="var(--gap)">
+        <GridItem>
           <FrontNews article={featuredArticles && featuredArticles[0]} />
           <SectionWrapper>
             <div className={styles.image_news_wrapper}>
@@ -42,48 +44,58 @@ export default async function Home({ params }) {
               })}
             </Section>
           </SectionWrapper>
-        </div>
-        <SectionWrapper>
-          <Section>
-            <Topics title="আলোচিত" articles={trendingArticles} />
-            {/* Hot this week */}
-            <div>
-              <HotNews articles={recentArticles} />
-              <Advertisement />
-            </div>
-          </Section>
-        </SectionWrapper>
-      </div>
-      {/* Recent news */}
-
-      {data?.category_menu?.menus?.map((menu, index) => (
-        <>
-          {recentArticles?.filter((art) => art?.category_slug === menu?.slug)
-            .length > 0 && (
-            <SectionWrapper key={index}>
-              <div className={styles.recent_title}>
-                <Title title={menu?.name} />
-              </div>
-              <div className={styles.recent_section}>
-                <div>
-                  <div className={`${styles.recent_news} `}>
-                    {recentArticles
-                      ?.filter((art) => art?.category_slug === menu?.slug)
-                      ?.map((article, index) => (
-                        <FeaturedNews
-                          key={index}
-                          withArticle
-                          article={article}
-                        />
-                      ))}
-                  </div>
-                </div>
+        </GridItem>
+        <GridItem>
+          <SectionWrapper>
+            <Section>
+              <Topics title="আলোচিত" articles={trendingArticles} />
+              {/* Hot this week */}
+              <div>
+                <HotNews articles={recentArticles} />
                 <Advertisement />
               </div>
-            </SectionWrapper>
-          )}
-        </>
-      ))}
+            </Section>
+          </SectionWrapper>
+        </GridItem>
+      </Grid>
+
+      {/* Recent news */}
+      <Box>
+        {data?.category_menu?.menus?.map((menu, index) => (
+          <>
+            {recentArticles?.filter((art) => art?.category_slug === menu?.slug)
+              .length > 0 && (
+              <Flex
+                direction="column"
+                gap="var(--gap)"
+                padding="0 var(--padding)"
+              >
+                <div className={styles.recent_title}>
+                  <Title title={menu?.name} />
+                </div>
+                <Grid templateColumns={{ base: "1fr", md: "3fr 1fr" }}>
+                  <GridItem>
+                    <div className={`${styles.recent_news} `}>
+                      {recentArticles
+                        ?.filter((art) => art?.category_slug === menu?.slug)
+                        ?.map((article, index) => (
+                          <FeaturedNews
+                            key={index}
+                            withArticle
+                            article={article}
+                          />
+                        ))}
+                    </div>
+                  </GridItem>
+                  <GridItem>
+                    <Advertisement />
+                  </GridItem>
+                </Grid>
+              </Flex>
+            )}
+          </>
+        ))}
+      </Box>
     </Container>
   );
 }

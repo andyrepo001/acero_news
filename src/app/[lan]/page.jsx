@@ -61,7 +61,6 @@ export default async function Home({ params }) {
           </Box>
         </GridItem>
       </Grid>
-
       {/* Recent news */}
       <Box>
         {data?.category_menu?.menus?.map((menu, index) => (

@@ -1,15 +1,12 @@
-import styles from "./page.module.css";
 import Advertisement from "@/components/advertisement/advertisement";
 import Container from "@/components/container/container";
 import FeaturedNews from "@/components/news-cards/featured-news/featured-news";
 import FrontNews from "@/components/news-cards/front-news/front-news";
 import RegularNews from "@/components/news-cards/regular-news/regular-news";
 import NewsWithImage from "@/components/news-with-image/news-with-image";
-import Section from "@/components/section/section";
 import Title from "@/components/title/title";
 import HotNews from "@/components/hot-news/hot-news";
 import Topics from "@/components/topic-news/topic-news";
-import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 import { getData } from "@/hooks/server-api";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
@@ -31,31 +28,37 @@ export default async function Home({ params }) {
       <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap="var(--gap)">
         <GridItem>
           <FrontNews article={featuredArticles && featuredArticles[0]} />
-          <SectionWrapper>
-            <div className={styles.image_news_wrapper}>
-              {articles?.map((article, index) => {
-                return <NewsWithImage key={index} article={article} />;
-              })}
-            </div>
 
-            <Section>
-              {articles?.map((article, index) => {
-                return <RegularNews key={index} noDate news={article} />;
-              })}
-            </Section>
-          </SectionWrapper>
+          <Grid
+            templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+            gap="1rem"
+            padding="0 var(--padding)"
+          >
+            {articles?.map((article, index) => {
+              return <NewsWithImage key={index} article={article} />;
+            })}
+          </Grid>
+          <Grid
+            templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+            gap="var(--gap)"
+            padding="0 var(--padding)"
+          >
+            {articles?.map((article, index) => {
+              return <RegularNews key={index} noDate news={article} />;
+            })}
+          </Grid>
         </GridItem>
         <GridItem>
-          <SectionWrapper>
-            <Section>
+          <Box padding="0 var(--padding)">
+            <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
               <Topics title="আলোচিত" articles={trendingArticles} />
               {/* Hot this week */}
-              <div>
+              <Box>
                 <HotNews articles={recentArticles} />
                 <Advertisement />
-              </div>
-            </Section>
-          </SectionWrapper>
+              </Box>
+            </Grid>
+          </Box>
         </GridItem>
       </Grid>
 
@@ -70,12 +73,18 @@ export default async function Home({ params }) {
                 gap="var(--gap)"
                 padding="0 var(--padding)"
               >
-                <div className={styles.recent_title}>
+                <Box marginTop="calc(var(--margin) * 2)">
                   <Title title={menu?.name} />
-                </div>
-                <Grid templateColumns={{ base: "1fr", md: "3fr 1fr" }}>
+                </Box>
+                <Grid
+                  templateColumns={{ base: "1fr", md: "3fr 1fr" }}
+                  gap="var(--gap)"
+                >
                   <GridItem>
-                    <div className={`${styles.recent_news} `}>
+                    <Grid
+                      templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                      gap="calc(var(--gap) * 2)"
+                    >
                       {recentArticles
                         ?.filter((art) => art?.category_slug === menu?.slug)
                         ?.map((article, index) => (
@@ -85,7 +94,7 @@ export default async function Home({ params }) {
                             article={article}
                           />
                         ))}
-                    </div>
+                    </Grid>
                   </GridItem>
                   <GridItem>
                     <Advertisement />

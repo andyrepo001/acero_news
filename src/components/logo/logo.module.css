@@ -9,13 +9,14 @@
 }
 
 .header {
+  width: fit-content;
   position: relative;
 }
 
 .beta {
   position: absolute;
   top: 0;
-  right: 1rem;
+  right: -20%;
   padding: calc(var(--padding) * 0.5) var(--padding);
   text-transform: uppercase;
   color: #fff;

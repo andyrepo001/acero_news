@@ -1,14 +1,19 @@
-import styles from "./hot-news.module.css";
 import RegularNews from "../news-cards/regular-news/regular-news";
 import Title from "../title/title";
+import { Box } from "@chakra-ui/react";
 
 export default async function HotNews({ articles }) {
   return (
-    <aside className={`${styles.hot_news} ${styles.news_wrapper}`}>
+    <Box
+      bgColor="#f1f4f7"
+      padding="var(--padding)"
+      marginBottom="var(--margin)"
+      borderRadius="var(--radius)"
+    >
       <Title secondaryTitle="সর্বশেষ" secondaryColor="inherit" />
       {articles?.slice(0, 10)?.map((news, index) => (
         <RegularNews key={index} news={news} id={index} noDate />
       ))}
-    </aside>
+    </Box>
   );
 }

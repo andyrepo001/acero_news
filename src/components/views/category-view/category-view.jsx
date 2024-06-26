@@ -1,12 +1,10 @@
-import FrontNews from "@/components/news-cards/front-news/front-news";
-import styles from "./category-view.module.css";
+import { getData } from "@/hooks/server-api";
+import { Box, Grid } from "@chakra-ui/react";
 import Container from "@/components/container/container";
 import FeaturedNews from "@/components/news-cards/featured-news/featured-news";
-import Advertisement from "@/components/advertisement/advertisement";
 import Title from "@/components/title/title";
 import ErrorView from "../error-view/error-view";
 import HotNews from "@/components/hot-news/hot-news";
-import { getData } from "@/hooks/server-api";
 
 export default async function CategoryView({
   articles,
@@ -18,21 +16,27 @@ export default async function CategoryView({
 
   return (
     <Container>
-      <div className={styles.section_wrapper}>
-        <div className={styles.recent_title}>
+      <Box padding="calc(var(--padding) * 2) 0" margin="0 var(--margin)">
+        <Box margin="var(--margin) 0">
           <Title title={pageTitle?.category_name} />
-        </div>
-        <div className={styles.recent_section}>
-          <div>
-            <div className={`${styles.recent_news} `}>
+        </Box>
+        <Grid templateColumns={{ base: "1fr", md: "3fr 1fr" }} gap="var(--gap)">
+          <Box>
+            <Grid
+              templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+              gap={{
+                base: "calc(var(--gap) * 4)",
+                md: "calc(var(--gap) * 4) var(--gap)",
+              }}
+            >
               {articles?.map((article, index) => (
                 <FeaturedNews withArticle key={index} article={article} />
               ))}
-            </div>
-          </div>
+            </Grid>
+          </Box>
           <HotNews articles={articles} />
-        </div>
-      </div>
+        </Grid>
+      </Box>
     </Container>
   );
 }

@@ -10,6 +10,7 @@ export async function generateMetadata({ params }) {
     description: retrievedData?.category_template,
   };
 }
+
 export default async function Page({ params }) {
   const retrievedData = await getData(`category/${params?.lan}/${params?.id}`);
   const articles = await getData(

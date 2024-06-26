@@ -12,6 +12,7 @@ import Topics from "@/components/topic-news/topic-news";
 import Icon from "@/components/icon/icon";
 import Category from "@/components/category/category";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 
 export async function generateMetadata({ params }) {
   let data = await getData(`article/${params?.lan}/${params.slug}`);
@@ -38,10 +39,18 @@ export default async function Article({ params }) {
     .split(",")[1];
 
   return (
-    <>
+    <main>
       <Container>
-        <div className={styles.page}>
-          <div className={styles.main}>
+        <Grid
+          position="relative"
+          templateColumns={{ base: "1fr", md: "3fr 1.2fr" }}
+          gap="calc(var(--gap) * 2)"
+        >
+          <GridItem
+            position={{ md: "sticky" }}
+            top={{ md: "0" }}
+            height={{ md: "fit-content" }}
+          >
             <figure className={styles.image_wrapper}>
               <Image
                 src={data?.article_image}
@@ -95,15 +104,19 @@ export default async function Article({ params }) {
                 {/* End of content */}
               </div>
             </SectionWrapper>
-          </div>
-          <div className={styles.main}>
+          </GridItem>
+          <GridItem
+            position={{ md: "sticky" }}
+            top={{ md: "0" }}
+            height={{ md: "fit-content" }}
+          >
             <SectionWrapper>
               <HotNews articles={articles} />
               <Topics title="আসর" articles={articles} />
             </SectionWrapper>
-          </div>
-        </div>
+          </GridItem>
+        </Grid>
       </Container>
-    </>
+    </main>
   );
 }

@@ -9,6 +9,7 @@ export default async function HotNews({ articles }) {
       padding="var(--padding)"
       marginBottom="var(--margin)"
       borderRadius="var(--radius)"
+      height="fit-content"
     >
       <Title secondaryTitle="সর্বশেষ" secondaryColor="inherit" />
       {articles?.slice(0, 10)?.map((news, index) => (

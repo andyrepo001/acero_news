@@ -74,7 +74,7 @@ export default function Navbar() {
               <div className={styles.pages}>
                 {retrievedData?.header_menu?.menus?.map((menu, index) => (
                   <Link
-                    href={"/" + params?.lan + menu.slug}
+                    href={"/" + params?.lan + "/" + menu.slug}
                     className={styles.page_link}
                     key={index}
                   >

@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
 import styles from "./regular-news.module.css";
 import { useRef } from "react";
 import { useIntersection } from "@/hooks/use-intersection";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Category from "@/components/category/category";
 
 export default function RegularNews({ news, id, borderless, noDate }) {

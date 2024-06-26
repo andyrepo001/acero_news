@@ -1,12 +1,12 @@
 "use client";
-import Link from "next/link";
-import Container from "../container/container";
-import Logo from "../logo/logo";
 import styles from "./footer.module.css";
-import Title from "../title/title";
 import { getData } from "../../hooks/server-api";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Link from "next/link";
+import Container from "../container/container";
+import Logo from "../logo/logo";
+import Title from "../title/title";
 
 export default function Footer() {
   const params = useParams();

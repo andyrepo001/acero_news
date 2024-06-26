@@ -1,6 +1,6 @@
+import styles from "./section.module.css";
 import { Grid } from "@chakra-ui/react";
 import Title from "../title/title";
-import styles from "./section.module.css";
 
 export default function Section({ children, sectionTitle }) {
   return (

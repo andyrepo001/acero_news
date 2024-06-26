@@ -3,10 +3,10 @@ import styles from "./featured-news.module.css";
 import { useIntersection } from "@/hooks/use-intersection";
 import { useRef } from "react";
 import { decode } from "html-entities";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/category/category";
-import { useParams } from "next/navigation";
 
 export default function FeaturedNews({ withArticle, article }) {
   const item = useRef();

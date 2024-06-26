@@ -1,7 +1,7 @@
+import styles from "./topic-news.module.css";
 import FeaturedNews from "../news-cards/featured-news/featured-news";
 import RegularNews from "../news-cards/regular-news/regular-news";
 import Title from "../title/title";
-import styles from "./topic-news.module.css";
 
 export default function Topics({ title, articles }) {
   return (

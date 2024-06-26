@@ -1,6 +1,6 @@
+import { Box } from "@chakra-ui/react";
 import RegularNews from "../news-cards/regular-news/regular-news";
 import Title from "../title/title";
-import { Box } from "@chakra-ui/react";
 
 export default async function HotNews({ articles }) {
   return (

@@ -1,11 +1,6 @@
 import styles from "./title.module.css";
 
-export default function Title({
-  title,
-  secondaryTitle,
-  secondaryColor,
-  titleColor,
-}) {
+export default function Title({ title, secondaryTitle, secondaryColor }) {
   return (
     <>
       {title && <h2 className={styles.title}>{title}</h2>}

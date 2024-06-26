@@ -1,9 +1,9 @@
 "use client";
 import styles from "./news-with-image.module.css";
 import Image from "next/image";
-import RegularNews from "../news-cards/regular-news/regular-news";
 import { useRef } from "react";
 import { useIntersection } from "@/hooks/use-intersection";
+import RegularNews from "../news-cards/regular-news/regular-news";
 
 export default function NewsWithImage({ article }) {
   const item = useRef();

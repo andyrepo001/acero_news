@@ -1,12 +1,11 @@
 "use client";
 import styles from "./front-news.module.css";
-import Image from "next/image";
-import front_img from "@/assets/front-news.jpg";
-import Link from "next/link";
-import Title from "@/components/title/title";
 import { useIntersection } from "@/hooks/use-intersection";
 import { useRef } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import Title from "@/components/title/title";
 import Category from "@/components/category/category";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 

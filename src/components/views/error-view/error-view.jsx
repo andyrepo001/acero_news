@@ -1,5 +1,5 @@
-import Container from "@/components/container/container";
 import styles from "./error-view.module.css";
+import Container from "@/components/container/container";
 
 export default function ErrorView() {
   return (

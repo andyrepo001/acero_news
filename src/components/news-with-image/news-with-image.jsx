@@ -22,6 +22,7 @@ export default function NewsWithImage({ article }) {
           src={article?.article_image}
           alt=""
           fill
+          sizes="(max-width: 768px) 350px, 150px"
           className={styles.image}
         />
       </figure>

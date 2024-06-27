@@ -33,7 +33,7 @@ export default function FrontNews({ article }) {
             alt=""
             className={styles.image}
             fill
-            sizes="33vw"
+            sizes="(max-width: 768px) 60vw, 33vw"
           />
         </div>
         <SectionWrapper>

@@ -11,7 +11,7 @@ export default function Logo() {
   return (
     <header className={styles.header}>
       <Link href={`/${params?.lan}`} className={styles.logo}>
-        <Image src={logo} alt="" className={styles.logo_image} />
+        <Image src={logo} alt="" className={styles.logo_image} sizes="150px" />
       </Link>
       <span className={styles.beta}>beta</span>
     </header>

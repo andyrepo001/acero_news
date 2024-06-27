@@ -35,7 +35,7 @@ export default function FeaturedNews({ withArticle, article }) {
             src={article?.article_image}
             alt=""
             fill
-            sizes="20vw"
+            sizes="(max-width: 768px) 60vw, 25vw"
           />
         </figure>
         <div className={!withArticle ? styles.article_details : ""}>

@@ -54,8 +54,9 @@ export default async function Article({ params }) {
             <figure className={styles.image_wrapper}>
               <Image
                 src={data?.article_image}
-                alt=""
+                alt={data?.article_name}
                 fill
+                sizes="50vw"
                 className={styles.image}
               />
             </figure>
@@ -78,9 +79,10 @@ export default async function Article({ params }) {
                       <figure className={styles.author_image_wrapper}>
                         <Image
                           className={styles.author_image}
-                          src={demo}
-                          alt=""
+                          src={data?.article_image}
+                          alt={data?.author_name}
                           fill
+                          sizes="30px"
                         />
                       </figure>
                       <span className={styles.author_name}>

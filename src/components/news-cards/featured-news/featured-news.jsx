@@ -31,10 +31,11 @@ export default function FeaturedNews({ withArticle, article }) {
       <div className={styles.wrapper} title={article?.article_name}>
         <figure className={styles.image_wrapper}>
           <Image
+            className={styles.image}
             src={article?.article_image}
             alt=""
             fill
-            className={styles.image}
+            sizes="20vw"
           />
         </figure>
         <div className={!withArticle ? styles.article_details : ""}>

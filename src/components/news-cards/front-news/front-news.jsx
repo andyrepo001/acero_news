@@ -32,8 +32,8 @@ export default function FrontNews({ article }) {
             src={article?.article_image}
             alt=""
             className={styles.image}
-            quality={50}
             fill
+            sizes="33vw"
           />
         </div>
         <SectionWrapper>

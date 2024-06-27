@@ -12,14 +12,14 @@ import Topics from "@/components/topic-news/topic-news";
 import Icon from "@/components/icon/icon";
 import Category from "@/components/category/category";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 export async function generateMetadata({ params }) {
   let data = await getData(`article/${params?.lan}/${params.slug}`);
 
   return {
     title: data?.article_name,
-    description: data?.article_content,
+    description: data?.article_summary,
   };
 }
 

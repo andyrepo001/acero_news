@@ -1,0 +1,38 @@
+.flash_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding) 0;
+}
+
+.shell {
+  max-width: var(--max-width);
+  overflow: hidden;
+}
+
+.news_wrapper {
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #fff;
+  gap: calc(var(--gap) * 8);
+  animation: slide 60s linear infinite;
+}
+
+.headline {
+  min-width: max-content;
+  font-size: var(--font);
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

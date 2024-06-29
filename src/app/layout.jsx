@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import FlashNews from "@/components/flash-news/flash-news";
 
 export const metadata = {
   applicationName: "aceronews.com",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers bg="colors.background">
           <Navbar />
+          <FlashNews />
           {children}
           <Footer />
           <SpeedInsights />

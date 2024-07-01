@@ -13,6 +13,7 @@ import Icon from "@/components/icon/icon";
 import Category from "@/components/category/category";
 import SectionWrapper from "@/components/section-wrapper/section-wrapper";
 import { Grid, GridItem } from "@chakra-ui/react";
+import { images } from "../../../../../next.config";
 
 export async function generateMetadata({ params }) {
   let data = await getData(`article/${params?.lan}/${params.slug}`);
@@ -20,6 +21,25 @@ export async function generateMetadata({ params }) {
   return {
     title: data?.article_name,
     description: data?.article_summary,
+    openGraph: {
+      type: "article",
+      siteName: "https://aceronews.com",
+      images: [data?.seo?.itemprop?.meta?.image],
+    },
+    alternates: {
+      canonical: data?.article_name,
+    },
+    twitter: {
+      images: {
+        url: data?.seo?.itemprop?.meta?.image,
+        alt: data?.article_name,
+      },
+      card: "summary large image",
+      creator: "https://www.aceronews.com/",
+    },
+    other: {
+      itemprop: data?.article_name,
+    },
   };
 }
 

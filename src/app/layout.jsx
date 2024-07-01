@@ -8,14 +8,18 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import FlashNews from "@/components/flash-news/flash-news";
 
 export const metadata = {
-  applicationName: "aceronews.com",
+  applicationName: "aceronews",
   referrer: "origin-when-cross-origin",
   keywords: ["aceronews"],
-  authors: [{ name: "aceronews.com" }],
+  authors: [{ name: "staff desk" }],
   creator: "aceronews.com",
-  publisher: "aceronews.com",
+  publisher: "https://aceronews.com",
   og_type: "article",
+  developedBy: "meme",
   openGraph: {},
+  other: {
+    developed_by: "https://www.anvildynamics.xyz/",
+  },
 };
 
 export default function RootLayout({ children }) {
